@@ -13,6 +13,19 @@ you to filter and display the results.
   - e.g. For MacOS, you would run `server-darwin`
 - Open `http://localhost:8080` in your browser.
 
+### Running in Docker Desktop
+#### Build Docker Image
+`docker build -t security-hub-monitor .`
+
+#### Run Docker Image in the background
+`docker run -dit -p 8080:8080 security-hub-monitor`
+
+#### Run Docker Image in the foreground
+`docker run -it -p 8080:8080 security-hub-monitor`
+
+#### Access the application
+Open `http://localhost:8080` in your browser.
+
 ## Development
 
 Make sure you have a recent version of node.js installed and available and are able to run `npm`
