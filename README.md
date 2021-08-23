@@ -17,6 +17,14 @@ you to filter and display the results.
 
 Make sure you have a recent version of node.js installed and available and are able to run `npm`
 
+Install [pre-commit](https://pre-commit.com/) hooks in order to take advantage of linting prior to opening a PR.
+
+1. Install pre-commit
+    1. MacOS: `brew install pre-commit`
+    1. PIP: `pip install pre-commit`
+1. Install project specific hooks
+    1. From inside the git checkout: `pre-commit install`
+
 ### Install dependencies
 
 `npm i`
