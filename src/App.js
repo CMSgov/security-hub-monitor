@@ -133,6 +133,18 @@ function App() {
     searchData();
   }
 
+  const handleSuppressed = (e) => {
+    const name = e.target.name;
+    const checked = e.target.checked;
+    searchArray[name] = filterOptions[name].map(v => v.value);
+    if (checked) {
+      searchArray[name] = searchArray[name].filter(function(item) {
+        return item !== "SUPPRESSED";
+      })
+    }
+    setSearchArray(searchArray);
+    searchData();
+  }
 
   const searchData = () => {
     let filteredData = data;
@@ -339,6 +351,10 @@ function App() {
         <Filter name="Severity Label"/>
         <Filter name="Resource Type"/>
         <Filter name="Record State"/>
+        <div className="field onequarter">
+          <input id="hideSuppressed" name="Workflow Status" type="checkbox" onChange={handleSuppressed} />
+          <label htmlFor="hideSuppressed">Hide SUPPRESSED items</label>
+        </div>
         <button type="reset">Reset</button>
       </form>
 
